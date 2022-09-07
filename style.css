@@ -8,10 +8,9 @@
     --grey: #646666;
     --bg-color: #F6F8F8;
     --white: #ffffff;
-    --nav-text-color:#131515;
+    --content-text-color:#131515;
     --input-border-color:#8C8E8E;
     --line-color:#ACAEAE;
-    --footer-color:#131515;
     --heading-font:'Montserrat', sans-serif;
 }
 
@@ -31,10 +30,11 @@ body{
     font-family:  'Open Sans', sans-serif;
     background: var(--bg-color);
     font-size: 1.6rem;     /* equals to 16px*/
+    color: var(--content-text-color);
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 1.2rem 2.4rem;
 }
@@ -58,7 +58,7 @@ body{
 
 .chinedu-nav-link{
     transition: all 0.3s ;
-    color: var(--nav-text-color);
+    color: var(--content-text-color);
 }
 .chinedu-nav-link.active{
     color: var(--primary-color);
@@ -84,7 +84,7 @@ body{
     border-radius: 8px;
     padding: 1rem 2.4rem;
     color:  rgba(19, 21, 21, 0.38);
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--heading-font);
     font-weight: 500;
     cursor: pointer;
 } 
@@ -111,7 +111,7 @@ body{
 @media(min-width:1300px){
     
 .container{
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding:.5rem;
 }
@@ -127,7 +127,7 @@ body{
     background-position: center;
     object-fit: contain;
     color: var(--white);
-    z-index: -1;
+    z-index:1;
 }
 .chinedu-heading h1{
    font-size: 3rem;
@@ -193,6 +193,7 @@ body{
     border: none;
     border-radius: 8px;
     transition: .3s;
+    margin-bottom: 4rem;
     cursor: pointer;  
 }
 .donate-button:hover{
@@ -447,6 +448,7 @@ body{
 #footer-content{
     display: grid;
     gap: 2rem; 
+    display: block; 
 }
 .footer-item-heading h2{
     font-size: 2rem;
@@ -456,9 +458,16 @@ body{
 .footer-item{
     display: grid;
     gap: 4rem;
+    
 }
 .footer-items li{
     margin-top: 2rem;
+}
+.first-item{
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+
 }
 .email-for-newsletter form{
     display: flex;
@@ -474,6 +483,11 @@ body{
     border-radius: 2px;
     cursor: pointer;   
 }
+.email-for-newsletter
+ form input:focus{
+    outline: none;
+ }
+
 .email-for-newsletter 
 .submit-button{
     background: var(--secondary-color);
@@ -481,7 +495,7 @@ body{
     color: var(--white);
     padding: 0.8rem 2.5rem;
     border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--heading-font);
     font-size: 1.4rem;
     cursor: pointer;
 }
@@ -497,6 +511,9 @@ body{
 font-size: 2rem;
 margin-left: 1rem;
 }
+.footer-link .fa,.fas{
+    font-size: 1.8rem;
+    }
 .footer-link .fa-facebook{
     margin-left: 0;
 }
@@ -509,12 +526,19 @@ margin-left: 1rem;
 
 @media(min-width:760px){
     #footer-content{
+        display: grid!important;
         grid-template-columns:repeat(3,1fr);
         gap: 2rem;
     }
     .first-item{
         grid-column: span 3;
         margin: 0 auto;
+    }
+    .third-item{
+        justify-self: center;
+    }
+    .last-item{
+        justify-self: self-end;
     }
     .email-for-newsletter form{
         flex-wrap: nowrap;
@@ -527,9 +551,19 @@ margin-left: 1rem;
     }
     .first-item{
         grid-column: span none;
+        text-align: start;
     }
 }
 
+@media(min-width:1300px){
+    
+    .container{
+        max-width: 1300px;
+        margin: 0 auto;
+        padding:.5rem;
+    }
+    
+    }
 
 /* for the nav menu */
 @media(max-width:760px){
